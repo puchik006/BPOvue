@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+
+      <select-city
+        title = "Departure city"
+        citytype = "departure"
+        v-on:select="changeItem">
+      </select-city>
+
+      <select-city
+        title = "Distinstion city"
+        citytype = "distinstion"
+        v-on:select="changeItem">
+      </select-city>
+
+      <select-date
+       title = "Departure date"
+       datetype = "departure"
+       v-on:input="inputDate">
+      </select-date>
+
+      <select-date
+      title = "Arrival date"
+      datetype = "arrival"
+      v-on:input="inputDate">
+     </select-date>
+
+      <h3></h3>
+      <button class="button" v-on:click="submit">Submit</button>
+
+    </div>
+
+    <!-- Import App -->
+    <script src="./main.js"></script>
+
+    <!-- Import Components -->
+    <script src="./components/selectCity.js"></script>
+    <script src="./components/selectDate.js"></script>
+ 
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+
+  </body>
+</html>
